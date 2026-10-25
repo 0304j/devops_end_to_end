@@ -1,0 +1,33 @@
+# Local development services. Phase 3: PostgreSQL only.
+# The app container is added in Phase 7.
+#
+#   docker compose up -d db     start the database
+#   docker compose down         stop it (data stays in the volume)
+#   docker compose down -v      stop it and DELETE all local data
+
+services:
+  db:
+    # TODO: pin to postgres:17.11-alpine once image pulls work again on this
+    # machine (Docker Desktop pulls were hanging). Uses the local postgres:17.
+    image: postgres:17
+    pull_policy: never
+    restart: unless-stopped
+    # POSTGRES_USER, POSTGRES_PASSWORD and POSTGRES_DB come from .env.local,
+    # which is not committed. See .env.example.
+    env_file: .env.local
+    environment:
+      TZ: UTC
+      PGTZ: UTC
+    ports:
+      # Bound to localhost only: the database is not reachable from the network.
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  pgdata:
