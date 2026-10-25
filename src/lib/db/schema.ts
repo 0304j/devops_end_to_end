@@ -93,3 +93,40 @@ export const bookingRequests = pgTable(
 );
 
 export type BookingRequestRow = typeof bookingRequests.$inferSelect;
+
+/** Garage staff who may use /admin. Created with `npm run admin:create`. */
+export const adminUsers = pgTable("admin_users", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  email: text("email").notNull().unique(),
+  /** scrypt hash, see src/lib/auth/password.ts. Never the plain password. */
+  passwordHash: text("password_hash").notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+});
+
+export const adminSessions = pgTable(
+  "admin_sessions",
+  {
+    /** SHA-256 of the session token. The token itself only exists in the cookie. */
+    tokenHash: text("token_hash").primaryKey(),
+    userId: uuid("user_id")
+      .notNull()
+      .references(() => adminUsers.id, { onDelete: "cascade" }),
+    expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (table) => [index("admin_sessions_expires_at_idx").on(table.expiresAt)],
+);
+
+/**
+ * Events for rate limiting (login failures, booking requests). Keys contain
+ * only hashes of e-mail addresses and IPs, never the plain values.
+ */
+export const rateLimitEvents = pgTable(
+  "rate_limit_events",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    key: text("key").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (table) => [index("rate_limit_events_key_created_idx").on(table.key, table.createdAt)],
+);

@@ -40,10 +40,9 @@ export class SmtpNotifier implements Notifier {
     } catch (error) {
       // SMTP error messages can echo addresses; keep only the error code.
       const { code, responseCode } = (error ?? {}) as { code?: string; responseCode?: number };
-      throw new NotificationError(
-        [code ?? "SMTP_ERROR", responseCode].filter(Boolean).join(" "),
-        { cause: error },
-      );
+      throw new NotificationError([code ?? "SMTP_ERROR", responseCode].filter(Boolean).join(" "), {
+        cause: error,
+      });
     }
   }
 }

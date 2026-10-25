@@ -9,13 +9,9 @@ export function Services() {
       aria-labelledby="leistungen-title"
       className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-10 lg:py-28"
     >
-      <SectionHeading
-        id="leistungen-title"
-        eyebrow="Leistungen"
-        title="Was wir für Sie tun"
-      >
-        Den Preis nennen wir Ihnen nach Sichtung des Fahrzeugs – verbindlich und
-        bevor wir mit der Arbeit beginnen.
+      <SectionHeading id="leistungen-title" eyebrow="Leistungen" title="Was wir für Sie tun">
+        Den Preis nennen wir Ihnen nach Sichtung des Fahrzeugs – verbindlich und bevor wir mit der
+        Arbeit beginnen.
       </SectionHeading>
 
       <ol className="mt-14 grid border-t border-line md:grid-cols-2 lg:grid-cols-3">
@@ -28,9 +24,7 @@ export function Services() {
               {String(index + 1).padStart(2, "0")}
             </span>
             <h3 className="mt-4 text-xl font-semibold">{service.title}</h3>
-            <p className="mt-3 leading-relaxed text-ink-soft">
-              {service.description}
-            </p>
+            <p className="mt-3 leading-relaxed text-ink-soft">{service.description}</p>
           </li>
         ))}
       </ol>

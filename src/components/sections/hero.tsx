@@ -14,14 +14,13 @@ export function Hero() {
             </p>
             <h1
               id="hero-title"
-              className="font-wide mt-6 text-[2.75rem] leading-[0.95] font-extrabold tracking-tight text-balance sm:text-6xl lg:text-[4.25rem]"
+              className="mt-6 text-[2.75rem] leading-[0.95] font-extrabold tracking-tight text-balance font-wide sm:text-6xl lg:text-[4.25rem]"
             >
               Ehrliche Arbeit an Ihrem Auto.
             </h1>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-ink-soft">
-              Inspektion, Reparatur und Fehlerdiagnose für alle gängigen Marken.
-              Sie erfahren, was zu tun ist und was es kostet – bevor wir
-              anfangen.
+              Inspektion, Reparatur und Fehlerdiagnose für alle gängigen Marken. Sie erfahren, was
+              zu tun ist und was es kostet – bevor wir anfangen.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link
@@ -47,10 +46,7 @@ export function Hero() {
 
           <dl className="grid gap-3 border-t border-line pt-6 sm:grid-cols-3 sm:gap-4">
             {site.openingHours.map((entry) => (
-              <div
-                key={entry.short}
-                className="flex items-baseline justify-between sm:block"
-              >
+              <div key={entry.short} className="flex items-baseline justify-between sm:block">
                 <dt className="eyebrow">{entry.short}</dt>
                 <dd className="font-mono text-sm whitespace-nowrap sm:mt-1.5">
                   {entry.hours ?? "geschlossen"}

@@ -35,10 +35,7 @@ export function SlotPicker({
 
   return (
     <div className="space-y-8">
-      <fieldset
-        id="booking-date"
-        aria-describedby={dateError ? "booking-date-error" : undefined}
-      >
+      <fieldset id="booking-date" aria-describedby={dateError ? "booking-date-error" : undefined}>
         <legend className="font-medium">Tag</legend>
         <div className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-4 lg:grid-cols-6">
           {days.map((day) => {

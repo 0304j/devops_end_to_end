@@ -24,12 +24,12 @@ export default function BookingPage() {
         <div className="lg:col-span-4">
           <div className="lg:sticky lg:top-28">
             <p className="eyebrow">Termin vereinbaren</p>
-            <h1 className="font-wide mt-4 text-4xl leading-none font-extrabold tracking-tight sm:text-5xl">
+            <h1 className="mt-4 text-4xl leading-none font-extrabold tracking-tight font-wide sm:text-5xl">
               Termin anfragen
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-ink-soft">
-              Wählen Sie Leistung und Wunschtermin und beschreiben Sie kurz Ihr Anliegen.
-              Wir prüfen die Anfrage und bestätigen den Termin telefonisch oder per E-Mail.
+              Wählen Sie Leistung und Wunschtermin und beschreiben Sie kurz Ihr Anliegen. Wir prüfen
+              die Anfrage und bestätigen den Termin telefonisch oder per E-Mail.
             </p>
 
             <div className="mt-10 border-t border-line pt-6">

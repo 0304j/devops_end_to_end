@@ -31,7 +31,7 @@
   }
 
   body {
-    @apply bg-paper text-ink font-sans antialiased;
+    @apply bg-paper font-sans text-ink antialiased;
   }
 
   ::selection {

@@ -49,7 +49,15 @@ export function describedBy(id: string, { hint, error }: { hint?: unknown; error
 type TextFieldProps = Omit<FieldShellProps, "children"> &
   Omit<InputHTMLAttributes<HTMLInputElement>, "id">;
 
-export function TextField({ id, label, optional, hint, error, className, ...input }: TextFieldProps) {
+export function TextField({
+  id,
+  label,
+  optional,
+  hint,
+  error,
+  className,
+  ...input
+}: TextFieldProps) {
   return (
     <FieldShell id={id} label={label} optional={optional} hint={hint} error={error}>
       <input
@@ -68,7 +76,14 @@ export function TextField({ id, label, optional, hint, error, className, ...inpu
 type TextAreaFieldProps = Omit<FieldShellProps, "children"> &
   Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, "id">;
 
-export function TextAreaField({ id, label, optional, hint, error, ...textarea }: TextAreaFieldProps) {
+export function TextAreaField({
+  id,
+  label,
+  optional,
+  hint,
+  error,
+  ...textarea
+}: TextAreaFieldProps) {
   return (
     <FieldShell id={id} label={label} optional={optional} hint={hint} error={error}>
       <textarea

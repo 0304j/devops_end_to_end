@@ -7,9 +7,7 @@ export function SiteFooter() {
     <footer className="mt-auto bg-ink text-paper/80">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-12 lg:px-10">
         <div className="md:col-span-5">
-          <p className="font-wide text-2xl font-extrabold text-paper">
-            {site.name}
-          </p>
+          <p className="text-2xl font-extrabold text-paper font-wide">{site.name}</p>
           <p className="mt-2 text-sm">
             {site.tagline} · {fullAddress}
           </p>

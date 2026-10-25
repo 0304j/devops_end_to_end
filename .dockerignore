@@ -1,0 +1,18 @@
+# Never send secrets or local state to the Docker build
+.env*
+!.env.example
+.notifications/
+
+# Rebuilt inside the image
+node_modules/
+.next/
+
+# Not needed for the build
+.git/
+coverage/
+playwright-report/
+test-results/
+*.md
+!README.md
+Dockerfile
+compose.yaml

@@ -25,9 +25,7 @@ export const DESCRIPTION_MIN = 10;
 export const DESCRIPTION_MAX = 2000;
 
 export const bookingRequestSchema = z.object({
-  serviceId: z
-    .string()
-    .refine((id) => serviceIds.has(id), "Bitte wählen Sie eine Leistung."),
+  serviceId: z.string().refine((id) => serviceIds.has(id), "Bitte wählen Sie eine Leistung."),
   date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Bitte wählen Sie einen Tag."),
   time: z.string().regex(/^\d{2}:\d{2}$/, "Bitte wählen Sie eine Uhrzeit."),
 
@@ -51,7 +49,10 @@ export const bookingRequestSchema = z.object({
   description: z
     .string()
     .trim()
-    .min(DESCRIPTION_MIN, `Bitte beschreiben Sie Ihr Anliegen in mindestens ${DESCRIPTION_MIN} Zeichen.`)
+    .min(
+      DESCRIPTION_MIN,
+      `Bitte beschreiben Sie Ihr Anliegen in mindestens ${DESCRIPTION_MIN} Zeichen.`,
+    )
     .max(DESCRIPTION_MAX, `Bitte höchstens ${DESCRIPTION_MAX} Zeichen.`),
 
   name: requiredText("Bitte geben Sie Ihren Namen an.", 100).min(

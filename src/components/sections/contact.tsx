@@ -70,7 +70,7 @@ export function Contact() {
 
       <div className="bg-ink text-paper">
         <div className="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-16 sm:px-6 md:flex-row md:items-end md:justify-between lg:px-10">
-          <p className="font-wide max-w-xl text-3xl leading-tight font-extrabold tracking-tight text-balance sm:text-4xl">
+          <p className="max-w-xl text-3xl leading-tight font-extrabold tracking-tight text-balance font-wide sm:text-4xl">
             Steht eine Inspektion an oder stimmt etwas nicht?
           </p>
           <Link

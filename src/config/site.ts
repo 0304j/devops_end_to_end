@@ -74,14 +74,12 @@ export const site = {
     {
       id: "bremsen",
       title: "Bremsen",
-      description:
-        "Prüfung und Erneuerung von Bremsbelägen, Bremsscheiben und Bremsflüssigkeit.",
+      description: "Prüfung und Erneuerung von Bremsbelägen, Bremsscheiben und Bremsflüssigkeit.",
     },
     {
       id: "reifen",
       title: "Reifen & Räder",
-      description:
-        "Saisonaler Radwechsel, Reifenmontage, Auswuchten und Einlagerung auf Anfrage.",
+      description: "Saisonaler Radwechsel, Reifenmontage, Auswuchten und Einlagerung auf Anfrage.",
     },
     {
       id: "diagnose",
@@ -138,8 +136,7 @@ export const site = {
     },
     {
       title: "Alle Marken",
-      description:
-        "Als freie Werkstatt arbeiten wir an Fahrzeugen aller gängigen Hersteller.",
+      description: "Als freie Werkstatt arbeiten wir an Fahrzeugen aller gängigen Hersteller.",
     },
   ],
 

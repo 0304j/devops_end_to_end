@@ -14,7 +14,7 @@ export function SectionHeading({ id, eyebrow, title, children }: SectionHeadingP
         <p className="eyebrow">{eyebrow}</p>
         <h2
           id={id}
-          className="font-wide mt-4 text-4xl leading-none font-extrabold tracking-tight sm:text-5xl"
+          className="mt-4 text-4xl leading-none font-extrabold tracking-tight font-wide sm:text-5xl"
         >
           {title}
         </h2>

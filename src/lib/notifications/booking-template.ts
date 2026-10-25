@@ -56,8 +56,7 @@ const text = {
   problem: "وصف المشكلة",
   original: "النص الأصلي (بالألمانية)",
   machineTranslated: "ترجمة آلية من الألمانية – قد تحتوي على أخطاء.",
-  translationFailed:
-    "تعذّرت الترجمة الآلية. يُرجى الاطلاع على النص الأصلي باللغة الألمانية أدناه.",
+  translationFailed: "تعذّرت الترجمة الآلية. يُرجى الاطلاع على النص الأصلي باللغة الألمانية أدناه.",
   translationSkipped: "الترجمة الآلية غير مفعّلة. النص الأصلي باللغة الألمانية أدناه.",
   reference: "رقم الطلب",
   devBanner: "بيئة تطوير – رسالة تجريبية · Entwicklungsmodus – Testnachricht",
@@ -117,8 +116,14 @@ export function renderBookingNotification(
     [text.date, escapeHtml(date)],
     [text.time, ltr(time)],
     [text.customer, `<bdi>${escapeHtml(data.customerName)}</bdi>`],
-    [text.phone, `<a href="tel:${escapeHtml(data.customerPhone.replace(/[^\d+]/g, ""))}">${ltr(data.customerPhone)}</a>`],
-    [text.email, `<a href="mailto:${escapeHtml(data.customerEmail)}">${ltr(data.customerEmail)}</a>`],
+    [
+      text.phone,
+      `<a href="tel:${escapeHtml(data.customerPhone.replace(/[^\d+]/g, ""))}">${ltr(data.customerPhone)}</a>`,
+    ],
+    [
+      text.email,
+      `<a href="mailto:${escapeHtml(data.customerEmail)}">${ltr(data.customerEmail)}</a>`,
+    ],
     [text.vehicle, ltr(vehicle)],
     ...(data.licensePlate ? [[text.plate, ltr(data.licensePlate)] as [string, string]] : []),
   ];

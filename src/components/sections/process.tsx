@@ -37,9 +37,7 @@ export function Process() {
       <ol className="mt-14 grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-4">
         {steps.map((step, index) => (
           <li key={step.title} className="bg-paper py-8 sm:pr-8 lg:py-10">
-            <span className="font-wide text-5xl font-extrabold text-line">
-              {index + 1}
-            </span>
+            <span className="text-5xl font-extrabold text-line font-wide">{index + 1}</span>
             <h3 className="mt-6 text-xl font-semibold">{step.title}</h3>
             <p className="mt-3 leading-relaxed text-ink-soft">{step.description}</p>
           </li>

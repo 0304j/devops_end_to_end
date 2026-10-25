@@ -30,15 +30,13 @@ export function BookingConfirmation({ request, onRestart }: BookingConfirmationP
         <h2
           ref={headingRef}
           tabIndex={-1}
-          className="font-wide mt-3 text-3xl leading-tight font-extrabold tracking-tight focus:outline-none sm:text-4xl"
+          className="mt-3 text-3xl leading-tight font-extrabold tracking-tight font-wide focus:outline-none sm:text-4xl"
         >
           Vielen Dank, {request.name}.
         </h2>
         <p className="mt-4 max-w-xl text-lg leading-relaxed text-ink-soft">
           Wir haben Ihre Terminanfrage erhalten.{" "}
-          <strong className="font-semibold text-ink">
-            Das ist noch keine Terminbestätigung.
-          </strong>{" "}
+          <strong className="font-semibold text-ink">Das ist noch keine Terminbestätigung.</strong>{" "}
           Wir prüfen Ihre Anfrage und melden uns telefonisch oder per E-Mail bei Ihnen.
         </p>
       </div>

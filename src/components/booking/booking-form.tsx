@@ -228,8 +228,18 @@ export function BookingForm({ days, onRestart }: BookingFormProps) {
 
         <FormSection step={3} title="Fahrzeug">
           <div className="grid gap-6 sm:grid-cols-2">
-            <TextField label="Marke" placeholder="z. B. Volkswagen" autoComplete="off" {...textProps("vehicleMake")} />
-            <TextField label="Modell" placeholder="z. B. Golf" autoComplete="off" {...textProps("vehicleModel")} />
+            <TextField
+              label="Marke"
+              placeholder="z. B. Volkswagen"
+              autoComplete="off"
+              {...textProps("vehicleMake")}
+            />
+            <TextField
+              label="Modell"
+              placeholder="z. B. Golf"
+              autoComplete="off"
+              {...textProps("vehicleModel")}
+            />
             <TextField
               label="Baujahr"
               optional

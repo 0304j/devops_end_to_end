@@ -43,3 +43,8 @@ next-env.d.ts
 
 # local notification previews (contain personal data)
 /.notifications/
+
+# test output
+/test-results/
+/playwright-report/
+/coverage/

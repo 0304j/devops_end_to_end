@@ -52,11 +52,7 @@ export function MobileNav({ items }: { items: NavItem[] }) {
         <ul className="px-4 py-2 sm:px-6">
           {items.map((item) => (
             <li key={item.href} className="border-b border-line last:border-0">
-              <Link
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="block py-4 text-lg"
-              >
+              <Link href={item.href} onClick={() => setOpen(false)} className="block py-4 text-lg">
                 {item.label}
               </Link>
             </li>

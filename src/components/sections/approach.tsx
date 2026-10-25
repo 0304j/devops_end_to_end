@@ -21,7 +21,7 @@ export function Approach() {
           <p className="eyebrow">Arbeitsweise</p>
           <h2
             id="arbeitsweise-title"
-            className="font-wide mt-4 text-4xl leading-none font-extrabold tracking-tight sm:text-5xl"
+            className="mt-4 text-4xl leading-none font-extrabold tracking-tight font-wide sm:text-5xl"
           >
             Sie wissen, woran Sie sind.
           </h2>
@@ -30,9 +30,7 @@ export function Approach() {
             {site.principles.map((principle) => (
               <div key={principle.title} className="border-l-2 border-accent pl-5">
                 <dt className="text-lg font-semibold">{principle.title}</dt>
-                <dd className="mt-2 leading-relaxed text-ink-soft">
-                  {principle.description}
-                </dd>
+                <dd className="mt-2 leading-relaxed text-ink-soft">{principle.description}</dd>
               </div>
             ))}
           </dl>
